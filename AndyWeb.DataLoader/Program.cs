@@ -32,15 +32,15 @@ namespace AndyWeb.DataLoader
                     case "calendar.txt":
                         var calendarValues = CsvParseFile<Calendar>(ctaDataFile, new CalendarClassMap());
                         break;
-                    //case "calendar_dates.txt":
-                    //    var calendarDatesValues = CsvParseFile<CalendarDates>(ctaDataFile);
-                    //    break;
-                    //case "frequencies.txt":
-                    //    var frequenciesValues = CsvParseFile<Frequencies>(ctaDataFile);
-                    //    break;
-                    //case "routes.txt":
-                    //    var routesValues = CsvParseFile<Routes>(ctaDataFile);
-                    //    break;
+                    case "calendar_dates.txt":
+                        var calendarDatesValues = CsvParseFile<CalendarDates>(ctaDataFile, new CalendarDatesClassMap());
+                        break;
+                    case "frequencies.txt":
+                        var frequenciesValues = CsvParseFile<Frequencies>(ctaDataFile, new FrequenciesClassMap());
+                        break;
+                    case "routes.txt":
+                        var routesValues = CsvParseFile<Routes>(ctaDataFile, new RoutesClassMap());
+                        break;
                     //case "shapes.txt":
                     //    var shapesValues = CsvParseFile<Shapes>(ctaDataFile);
                     //    break;

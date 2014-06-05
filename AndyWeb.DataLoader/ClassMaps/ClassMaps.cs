@@ -35,4 +35,39 @@ namespace AndyWeb.DataLoader
             Map(m => m.EndDate).Name("end_date").TypeConverter<DateTimeConverter>();
         }
     }
+
+    public class CalendarDatesClassMap : CsvClassMap<CalendarDates>
+    {
+        public CalendarDatesClassMap()
+        {
+            Map(m => m.ServiceId).Name("service_id");
+            Map(m => m.Date).Name("date").TypeConverter<DateTimeConverter>();
+            Map(m => m.ExceptionType).Name("exception_type");
+        }
+    }
+
+    public class FrequenciesClassMap : CsvClassMap<Frequencies>
+    {
+        public FrequenciesClassMap()
+        {
+            Map(m => m.TripId).Name("trip_id");
+            Map(m => m.StartTime).Name("start_time").TypeConverter<DateTimeConverter>();
+            Map(m => m.EndTime).Name("end_time").TypeConverter<DateTimeConverter>();
+            Map(m => m.HeadwaySeconds).Name("headway_secs");
+        }
+    }
+
+    public class RoutesClassMap : CsvClassMap<Routes>
+    {
+        public RoutesClassMap()
+        {
+            Map(m => m.RouteId).Name("route_id");
+            Map(m => m.ShortName).Name("route_short_name");
+            Map(m => m.FullName).Name("route_long_name");
+            Map(m => m.RouteType).Name("route_type");
+            Map(m => m.Url).Name("route_url");
+            Map(m => m.RouteColor).Name("route_color");
+            Map(m => m.RouteTextColor).Name("route_text_color");
+        }
+    }
 }
