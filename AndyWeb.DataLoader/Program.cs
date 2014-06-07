@@ -41,15 +41,15 @@ namespace AndyWeb.DataLoader
                     case "routes.txt":
                         var routesValues = CsvParseFile<Routes>(ctaDataFile, new RoutesClassMap());
                         break;
-                    //case "shapes.txt":
-                    //    var shapesValues = CsvParseFile<Shapes>(ctaDataFile);
-                    //    break;
-                    //case "stop_times.txt":
-                    //    var stopTimesValues = CsvParseFile<StopTimes>(ctaDataFile);
-                    //    break;
-                    //case "stops.txt":
-                    //    var stopsValues = CsvParseFile<Stops>(ctaDataFile);
-                    //    break;
+                    case "shapes.txt":
+                        var shapesValues = CsvParseFile<Shapes>(ctaDataFile, new ShapesClassMap());
+                        break;
+                    case "stop_times.txt":
+                        //var stopTimesValues = CsvParseFile<StopTimes>(ctaDataFile, new StopTimesClassMap());
+                        break;
+                    case "stops.txt":
+                        var stopsValues = CsvParseFile<Stops>(ctaDataFile, new StopsClassMap());
+                        break;
                     //case "transfers.txt":
                     //    var transfersValues = CsvParseFile<Transfers>(ctaDataFile);
                     //    break;

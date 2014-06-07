@@ -70,4 +70,47 @@ namespace AndyWeb.DataLoader
             Map(m => m.RouteTextColor).Name("route_text_color");
         }
     }
+
+    public class ShapesClassMap: CsvClassMap<Shapes>
+    {
+        public ShapesClassMap()
+        {
+            Map(m => m.ShapeId).Name("shape_id");
+            Map(m => m.LatitudePoint).Name("shape_pt_lat");
+            Map(m => m.LongitudePoint).Name("shape_pt_lon");
+            Map(m => m.PointSequence).Name("shape_pt_sequence");
+            Map(m => m.DistanceTraveled).Name("shape_dist_traveled");
+        }
+    }
+
+    public class StopTimesClassMap: CsvClassMap<StopTimes>
+    {
+        public StopTimesClassMap()
+        {
+            Map(m => m.TripId).Name("trip_id");
+            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeConverter>();
+            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeConverter>();
+            Map(m => m.StopId).Name("stop_id");
+            Map(m => m.StopSequence).Name("stop_sequence");
+            Map(m => m.StopHeadSign).Name("stop_headsign");
+            Map(m => m.PickupType).Name("pickup_type");
+            Map(m => m.DistanceTraveled).Name("shape_dist_traveled");
+        }
+    }
+
+    public class StopsClassMap: CsvClassMap<Stops>
+    {
+        public StopsClassMap()
+        {
+            Map(m => m.StopId).Name("stop_id");
+            Map(m => m.StopCode).Name("stop_code");
+            Map(m => m.Name).Name("stop_name");
+            Map(m => m.Description).Name("stop_desc");
+            Map(m => m.Latitude).Name("stop_lat");
+            Map(m => m.Longitude).Name("stop_lon");
+            Map(m => m.LocationType).Name("location_type");
+            Map(m => m.ParentStation).Name("parent_station");
+            Map(m => m.WheelchairBoarding).Name("wheelchair_boarding");
+        }
+    }
 }

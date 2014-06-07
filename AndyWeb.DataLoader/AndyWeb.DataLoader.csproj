@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassMaps\ClassMaps.cs" />
-    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\Converters.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\Calendar.cs" />
     <Compile Include="Models\CalendarDates.cs" />
