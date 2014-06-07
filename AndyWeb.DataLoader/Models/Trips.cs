@@ -2,6 +2,13 @@
 {
     public class Trips
     {
+        private static int _id = 0;
+
+        public Trips()
+        {
+            Id = _id++;
+        }
+
         public int Id { get; set; }
         public string RouteId { get; set; }
         public long ServiceId { get; set; }

@@ -2,6 +2,13 @@
 {
     public class Routes
     {
+        private static int _id = 0;
+
+        public Routes()
+        {
+            Id = _id++;
+        }
+
         public int Id { get; set; }
         public string RouteId { get; set; }
         public string ShortName { get; set; }

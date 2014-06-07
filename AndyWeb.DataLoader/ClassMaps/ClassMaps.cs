@@ -1,9 +1,4 @@
 ﻿using CsvHelper.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AndyWeb.DataLoader
 {
@@ -19,6 +14,7 @@ namespace AndyWeb.DataLoader
             Map(m => m.FareUrl).Name("agency_fare_url");
         }
     }
+
     public class CalendarClassMap : CsvClassMap<Calendar>
     {
         public CalendarClassMap()
@@ -71,7 +67,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class ShapesClassMap: CsvClassMap<Shapes>
+    public class ShapesClassMap : CsvClassMap<Shapes>
     {
         public ShapesClassMap()
         {
@@ -83,13 +79,29 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopTimesClassMap: CsvClassMap<StopTimes>
+    public class StopsClassMap : CsvClassMap<Stops>
+    {
+        public StopsClassMap()
+        {
+            Map(m => m.StopId).Name("stop_id");
+            Map(m => m.StopCode).Name("stop_code").TypeConverter<NotNullableIntConverter>();
+            Map(m => m.Name).Name("stop_name");
+            Map(m => m.Description).Name("stop_desc");
+            Map(m => m.Latitude).Name("stop_lat");
+            Map(m => m.Longitude).Name("stop_lon");
+            Map(m => m.LocationType).Name("location_type");
+            Map(m => m.ParentStation).Name("parent_station").TypeConverter<NotNullableIntConverter>();
+            Map(m => m.WheelchairBoarding).Name("wheelchair_boarding");
+        }
+    }
+
+    public class StopTimesClassMap : CsvClassMap<StopTimes>
     {
         public StopTimesClassMap()
         {
             Map(m => m.TripId).Name("trip_id");
-            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeConverter>();
-            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeConverter>();
+            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeSpanConverter>();
+            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeSpanConverter>();
             Map(m => m.StopId).Name("stop_id");
             Map(m => m.StopSequence).Name("stop_sequence");
             Map(m => m.StopHeadSign).Name("stop_headsign");
@@ -98,19 +110,29 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopsClassMap: CsvClassMap<Stops>
+    public class TransfersClassMap : CsvClassMap<Transfers>
     {
-        public StopsClassMap()
+        public TransfersClassMap()
         {
-            Map(m => m.StopId).Name("stop_id");
-            Map(m => m.StopCode).Name("stop_code");
-            Map(m => m.Name).Name("stop_name");
-            Map(m => m.Description).Name("stop_desc");
-            Map(m => m.Latitude).Name("stop_lat");
-            Map(m => m.Longitude).Name("stop_lon");
-            Map(m => m.LocationType).Name("location_type");
-            Map(m => m.ParentStation).Name("parent_station");
-            Map(m => m.WheelchairBoarding).Name("wheelchair_boarding");
+            Map(m => m.SourceStopId).Name("from_stop_id");
+            Map(m => m.DestinationStopId).Name("to_stop_id");
+            Map(m => m.TransferType).Name("transfer_type");
+        }
+    }
+
+    public class TripsClassMap : CsvClassMap<Trips>
+    {
+        public TripsClassMap()
+        {
+            Map(m => m.RouteId).Name("route_id");
+            Map(m => m.ServiceId).Name("service_id");
+            Map(m => m.TripId).Name("trip_id");
+            Map(m => m.DirectionId).Name("direction_id");
+            Map(m => m.BlockId).Name("block_id");
+            Map(m => m.ShapeId).Name("shape_id");
+            Map(m => m.Direction).Name("direction");
+            Map(m => m.WheelchairAccessible).Name("wheelchair_accessible");
+            Map(m => m.ScheduledTripId).Name("schd_trip_id");
         }
     }
 }

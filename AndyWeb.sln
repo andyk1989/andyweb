@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb", "AndyWeb\AndyWeb.csproj", "{18599CF8-400D-4B76-8111-6B108A0C996B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb.Tests", "AndyWeb.Tests\AndyWeb.Tests.csproj", "{12BC22BE-32E0-447C-8353-45413BB981A8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb.DataLoader", "AndyWeb.DataLoader\AndyWeb.DataLoader.csproj", "{642E7047-217D-4052-BF01-665D08D49337}"
 EndProject
 Global
@@ -19,10 +17,6 @@ Global
 		{18599CF8-400D-4B76-8111-6B108A0C996B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18599CF8-400D-4B76-8111-6B108A0C996B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18599CF8-400D-4B76-8111-6B108A0C996B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12BC22BE-32E0-447C-8353-45413BB981A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12BC22BE-32E0-447C-8353-45413BB981A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12BC22BE-32E0-447C-8353-45413BB981A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12BC22BE-32E0-447C-8353-45413BB981A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{642E7047-217D-4052-BF01-665D08D49337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{642E7047-217D-4052-BF01-665D08D49337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{642E7047-217D-4052-BF01-665D08D49337}.Release|Any CPU.ActiveCfg = Release|Any CPU

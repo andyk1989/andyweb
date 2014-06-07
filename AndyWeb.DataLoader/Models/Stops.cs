@@ -8,6 +8,13 @@ namespace AndyWeb.DataLoader
 {
     public class Stops
     {
+        private static int _id = 0;
+
+        public Stops()
+        {
+            Id = _id++;
+        }
+
         public int Id { get; set; }
         public int StopId { get; set; }
         public int StopCode { get; set; }
