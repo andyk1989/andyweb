@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AndyWeb.DataLoader
 {
@@ -11,6 +12,7 @@ namespace AndyWeb.DataLoader
             Id = _id++;
         }
 
+        [Key]
         public TimeSpan ArrivalTime { get; set; }
         public TimeSpan DepartureTime { get; set; }
         public int DistanceTraveled { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace AndyWeb.DataLoader
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AndyWeb.DataLoader
 {
     public class Stops
     {
@@ -9,6 +11,7 @@
             Id = _id++;
         }
 
+        [Key]
         public int Id { get; set; }
         public int StopId { get; set; }
         public int StopCode { get; set; }

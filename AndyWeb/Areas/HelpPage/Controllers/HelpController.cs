@@ -1,8 +1,8 @@
+using AndyWeb.Areas.HelpPage.ModelDescriptions;
+using AndyWeb.Areas.HelpPage.Models;
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using AndyWeb.Areas.HelpPage.ModelDescriptions;
-using AndyWeb.Areas.HelpPage.Models;
 
 namespace AndyWeb.Areas.HelpPage.Controllers
 {

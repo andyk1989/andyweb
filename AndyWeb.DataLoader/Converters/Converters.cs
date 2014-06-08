@@ -54,7 +54,7 @@ namespace AndyWeb.DataLoader
         {
             int dayModifier = 0;
 
-            while(int.Parse(text.Substring(0, 2)) > 23)
+            while (int.Parse(text.Substring(0, 2)) > 23)
             {
                 text = (int.Parse(text.Substring(0, 2)) - 24).ToString("00") + text.Substring(2);
                 dayModifier++;

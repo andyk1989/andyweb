@@ -1,4 +1,6 @@
-﻿namespace AndyWeb.DataLoader
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AndyWeb.DataLoader
 {
     public class Routes
     {
@@ -9,6 +11,7 @@
             Id = _id++;
         }
 
+        [Key]
         public int Id { get; set; }
         public string RouteId { get; set; }
         public string ShortName { get; set; }

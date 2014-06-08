@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AndyWeb.DataLoader
 {
@@ -11,6 +12,7 @@ namespace AndyWeb.DataLoader
             Id = _id++;
         }
 
+        [Key]
         public int Id { get; set; }
         public long TripId { get; set; }
         public DateTime StartTime { get; set; }
