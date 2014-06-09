@@ -42,52 +42,52 @@ namespace AndyWeb.DataLoader
                 {
                     case "agency.txt":
                         var agencyValues = CsvParseFile<Agency>(ctaDataFile, new AgencyClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Agency>(agencyValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Agency>(agencyValues);
                         break;
 
                     case "calendar.txt":
                         var calendarValues = CsvParseFile<Calendar>(ctaDataFile, new CalendarClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Calendar>(calendarValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Calendar>(calendarValues);
                         break;
 
                     case "calendar_dates.txt":
                         var calendarDatesValues = CsvParseFile<CalendarDate>(ctaDataFile, new CalendarDatesClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, CalendarDate>(calendarDatesValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, CalendarDate>(calendarDatesValues);
                         break;
 
                     case "frequencies.txt":
                         var frequenciesValues = CsvParseFile<Frequency>(ctaDataFile, new FrequenciesClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Frequency>(frequenciesValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Frequency>(frequenciesValues);
                         break;
 
                     case "routes.txt":
                         var routesValues = CsvParseFile<Route>(ctaDataFile, new RoutesClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Route>(routesValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Route>(routesValues);
                         break;
 
                     case "shapes.txt":
                         var shapesValues = CsvParseFile<Shape>(ctaDataFile, new ShapesClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Shape>(shapesValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Shape>(shapesValues);
                         break;
 
                     case "stop_times.txt":
                         var stopTimesValues = CsvParseFile<StopTime>(ctaDataFile, new StopTimesClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, StopTime>(stopTimesValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, StopTime>(stopTimesValues);
                         break;
 
                     case "stops.txt":
                         var stopsValues = CsvParseFile<Stop>(ctaDataFile, new StopsClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Stop>(stopsValues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Stop>(stopsValues);
                         break;
 
                     case "transfers.txt":
                         var transfersvalues = CsvParseFile<Transfer>(ctaDataFile, new TransfersClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Transfer>(transfersvalues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Transfer>(transfersvalues);
                         break;
 
                     case "trips.txt":
                         var tripsvalues = CsvParseFile<Trip>(ctaDataFile, new TripsClassMap());
-                        DbUtilities.IncrementalInsert<CTADataDbContext, Trip>(tripsvalues);
+                        DbUtilities.BulkInsert<CTADataDbContext, Trip>(tripsvalues);
                         break;
 
                     default:

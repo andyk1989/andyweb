@@ -1,12 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Transactions;
+using EntityFramework.BulkInsert.Extensions;
 
 namespace AndyWeb.Library.Utilities
 {
     public static class DbUtilities
     {
-        private const int TRANSACTION_ENTITY_COUNT_LIMIT = 100;
+        private const int TRANSACTION_ENTITY_COUNT_LIMIT = 1000;
+
+        public static void BulkInsert<DB, T>(IEnumerable<T> entityCollection)
+            where DB: DbContext, new()
+            where T: class
+        {
+            DB context = new DB();
+            context.BulkInsert(entityCollection, TRANSACTION_ENTITY_COUNT_LIMIT);
+        }
 
         public static void IncrementalInsert<DB, T>(IEnumerable<T> entityCollection)
             where DB : DbContext, new()

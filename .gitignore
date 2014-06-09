@@ -6,6 +6,8 @@
 *.user
 *.sln.docstates
 
+[aA]pp.config
+
 # Build results
 
 [Dd]ebug/
