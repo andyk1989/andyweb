@@ -9,38 +9,34 @@ namespace AndyWeb.Library.Utilities
         private const int TRANSACTION_ENTITY_COUNT_LIMIT = 100;
 
         public static void IncrementalInsert<DB, T>(IEnumerable<T> entityCollection)
-            where DB: DbContext, new()
-            where T: class
+            where DB : DbContext, new()
+            where T : class
         {
-            using (TransactionScope scope = new TransactionScope())
+            DB context = null;
+            try
             {
-                DB context = null;
-                try
-                {
-                    context = new DB();
-                    context.Configuration.ValidateOnSaveEnabled = false;
-                    context.Configuration.AutoDetectChangesEnabled = false;
+                context = new DB();
+                context.Configuration.ValidateOnSaveEnabled = false;
+                context.Configuration.AutoDetectChangesEnabled = false;
 
-                    int runningCount = 0;
-                    foreach (var entityToInsert in entityCollection)
-                    {
-                        runningCount++;
-                        context = AddToContext(context, entityToInsert, runningCount, TRANSACTION_ENTITY_COUNT_LIMIT, true);
-                    }
-
-                    context.SaveChanges();
-                }
-                finally
+                int runningCount = 0;
+                foreach (var entityToInsert in entityCollection)
                 {
-                    if (context != null)
-                    {
-                        context.Dispose();
-                    }
+                    runningCount++;
+                    context = AddToContext(context, entityToInsert, runningCount, TRANSACTION_ENTITY_COUNT_LIMIT, true);
                 }
 
-                scope.Complete();
+                context.SaveChanges();
+            }
+            finally
+            {
+                if (context != null)
+                {
+                    context.Dispose();
+                }
             }
         }
+
         public static DB AddToContext<DB, T>(this DB context, T entity, int runningCount, int commitCountLimit, bool recreateContext)
             where DB : DbContext, new()
             where T : class
