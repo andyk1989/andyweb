@@ -1,8 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndyWeb.DataLoader
 {
+    [Table("Calendars")]
     public class Calendar
     {
         private static int _id = 0;

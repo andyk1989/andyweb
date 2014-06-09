@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndyWeb.DataLoader
 {
+    [Table("Agencies")]
     public class Agency
     {
         private static int _id = 0;

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndyWeb.DataLoader
 {
-    public class CalendarDates
+    [Table("CalendarDates")]
+    public class CalendarDate
     {
         private static int _id = 0;
 
-        public CalendarDates()
+        public CalendarDate()
         {
             Id = _id++;
         }

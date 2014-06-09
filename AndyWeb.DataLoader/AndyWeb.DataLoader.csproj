@@ -55,14 +55,14 @@
     <Compile Include="Converters\Converters.cs" />
     <Compile Include="Models\Agency.cs" />
     <Compile Include="Models\Calendar.cs" />
-    <Compile Include="Models\CalendarDates.cs" />
-    <Compile Include="Models\Frequencies.cs" />
-    <Compile Include="Models\Routes.cs" />
-    <Compile Include="Models\Shapes.cs" />
-    <Compile Include="Models\Stops.cs" />
-    <Compile Include="Models\StopTimes.cs" />
-    <Compile Include="Models\Transfers.cs" />
-    <Compile Include="Models\Trips.cs" />
+    <Compile Include="Models\CalendarDate.cs" />
+    <Compile Include="Models\Frequency.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\Shape.cs" />
+    <Compile Include="Models\Stop.cs" />
+    <Compile Include="Models\StopTime.cs" />
+    <Compile Include="Models\Transfer.cs" />
+    <Compile Include="Models\Trip.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

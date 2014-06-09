@@ -32,7 +32,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class CalendarDatesClassMap : CsvClassMap<CalendarDates>
+    public class CalendarDatesClassMap : CsvClassMap<CalendarDate>
     {
         public CalendarDatesClassMap()
         {
@@ -42,7 +42,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class FrequenciesClassMap : CsvClassMap<Frequencies>
+    public class FrequenciesClassMap : CsvClassMap<Frequency>
     {
         public FrequenciesClassMap()
         {
@@ -53,7 +53,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class RoutesClassMap : CsvClassMap<Routes>
+    public class RoutesClassMap : CsvClassMap<Route>
     {
         public RoutesClassMap()
         {
@@ -67,7 +67,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class ShapesClassMap : CsvClassMap<Shapes>
+    public class ShapesClassMap : CsvClassMap<Shape>
     {
         public ShapesClassMap()
         {
@@ -79,7 +79,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopsClassMap : CsvClassMap<Stops>
+    public class StopsClassMap : CsvClassMap<Stop>
     {
         public StopsClassMap()
         {
@@ -95,7 +95,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopTimesClassMap : CsvClassMap<StopTimes>
+    public class StopTimesClassMap : CsvClassMap<StopTime>
     {
         public StopTimesClassMap()
         {
@@ -110,7 +110,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class TransfersClassMap : CsvClassMap<Transfers>
+    public class TransfersClassMap : CsvClassMap<Transfer>
     {
         public TransfersClassMap()
         {
@@ -120,7 +120,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class TripsClassMap : CsvClassMap<Trips>
+    public class TripsClassMap : CsvClassMap<Trip>
     {
         public TripsClassMap()
         {

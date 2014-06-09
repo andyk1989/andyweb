@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndyWeb.DataLoader
 {
-    public class Trips
+    [Table("Trips")]
+    public class Trip
     {
         private static int _id = 0;
 
-        public Trips()
+        public Trip()
         {
             Id = _id++;
         }

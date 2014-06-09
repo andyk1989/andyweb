@@ -1,13 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndyWeb.DataLoader
 {
-    public class StopTimes
+    [Table("StopTimes")]
+    public class StopTime
     {
         private static int _id = 0;
 
-        public StopTimes()
+        public StopTime()
         {
             Id = _id++;
         }

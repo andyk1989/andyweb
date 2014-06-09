@@ -47,35 +47,35 @@ namespace AndyWeb.DataLoader
                         break;
 
                     case "calendar_dates.txt":
-                        var calendarDatesValues = CsvParseFile<CalendarDates>(ctaDataFile, new CalendarDatesClassMap());
+                        var calendarDatesValues = CsvParseFile<CalendarDate>(ctaDataFile, new CalendarDatesClassMap());
                         break;
 
                     case "frequencies.txt":
-                        var frequenciesValues = CsvParseFile<Frequencies>(ctaDataFile, new FrequenciesClassMap());
+                        var frequenciesValues = CsvParseFile<Frequency>(ctaDataFile, new FrequenciesClassMap());
                         break;
 
                     case "routes.txt":
-                        var routesValues = CsvParseFile<Routes>(ctaDataFile, new RoutesClassMap());
+                        var routesValues = CsvParseFile<Route>(ctaDataFile, new RoutesClassMap());
                         break;
 
                     case "shapes.txt":
-                        var shapesValues = CsvParseFile<Shapes>(ctaDataFile, new ShapesClassMap());
+                        var shapesValues = CsvParseFile<Shape>(ctaDataFile, new ShapesClassMap());
                         break;
 
                     case "stop_times.txt":
-                        var stopTimesValues = CsvParseFile<StopTimes>(ctaDataFile, new StopTimesClassMap());
+                        var stopTimesValues = CsvParseFile<StopTime>(ctaDataFile, new StopTimesClassMap());
                         break;
 
                     case "stops.txt":
-                        var stopsValues = CsvParseFile<Stops>(ctaDataFile, new StopsClassMap());
+                        var stopsValues = CsvParseFile<Stop>(ctaDataFile, new StopsClassMap());
                         break;
 
                     case "transfers.txt":
-                        var transfersvalues = CsvParseFile<Transfers>(ctaDataFile, new TransfersClassMap());
+                        var transfersvalues = CsvParseFile<Transfer>(ctaDataFile, new TransfersClassMap());
                         break;
 
                     case "trips.txt":
-                        var tripsvalues = CsvParseFile<Trips>(ctaDataFile, new TripsClassMap());
+                        var tripsvalues = CsvParseFile<Trip>(ctaDataFile, new TripsClassMap());
                         break;
 
                     default:
