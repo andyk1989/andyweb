@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AndyWeb.DataLoader
+namespace AndyWeb.Library
 {
     [Table("Stops")]
     public class Stop
