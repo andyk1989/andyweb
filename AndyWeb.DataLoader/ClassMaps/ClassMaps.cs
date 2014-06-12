@@ -101,8 +101,8 @@ namespace AndyWeb.DataLoader
         public StopTimesClassMap()
         {
             Map(m => m.TripId).Name("trip_id");
-            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeSpanConverter>();
-            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeSpanConverter>();
+            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeConverter>();
+            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeConverter>();
             Map(m => m.StopId).Name("stop_id");
             Map(m => m.StopSequence).Name("stop_sequence");
             Map(m => m.StopHeadSign).Name("stop_headsign");

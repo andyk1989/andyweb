@@ -16,8 +16,8 @@ namespace AndyWeb.Library
 
         [Key]
         public int Id { get; set; }
-        public TimeSpan ArrivalTime { get; set; }
-        public TimeSpan DepartureTime { get; set; }
+        public DateTime ArrivalTime { get; set; }
+        public DateTime DepartureTime { get; set; }
         public int DistanceTraveled { get; set; }
         public int PickupType { get; set; }
         public string StopHeadSign { get; set; }

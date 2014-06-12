@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using EntityFramework.BulkInsert.Extensions;
+using System.Collections.Generic;
 using System.Data.Entity;
-using System.Transactions;
-using EntityFramework.BulkInsert.Extensions;
 
 namespace AndyWeb.Library.Utilities
 {
