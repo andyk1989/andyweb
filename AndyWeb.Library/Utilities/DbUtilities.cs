@@ -1,6 +1,7 @@
 ﻿using EntityFramework.BulkInsert.Extensions;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 
 namespace AndyWeb.Library.Utilities
 {
@@ -14,6 +15,24 @@ namespace AndyWeb.Library.Utilities
         {
             DB context = new DB();
             context.BulkInsert(entityCollection, TRANSACTION_ENTITY_COUNT_LIMIT);
+        }
+
+        public static void BulkInsertAndThrowaway<DB, T>(List<T> entityList)
+            where DB : DbContext, new()
+            where T : class
+        {
+            DB context = new DB();
+            while(entityList.Any())
+            {
+                int countAmount = TRANSACTION_ENTITY_COUNT_LIMIT;
+                if(entityList.Count < TRANSACTION_ENTITY_COUNT_LIMIT)
+                {
+                    countAmount = entityList.Count;
+                }
+
+                context.BulkInsert(entityList.GetRange(0, countAmount), TRANSACTION_ENTITY_COUNT_LIMIT);
+                entityList.RemoveRange(0, countAmount);
+            }
         }
 
         public static void IncrementalInsert<DB, T>(IEnumerable<T> entityCollection)
