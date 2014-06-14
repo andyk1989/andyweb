@@ -1,4 +1,6 @@
-﻿using CsvHelper;
+﻿using AndyWeb.Library;
+using AndyWeb.Library.Utilities;
+using CsvHelper;
 using CsvHelper.Configuration;
 using System.Collections.Generic;
 using System.IO;
@@ -40,46 +42,67 @@ namespace AndyWeb.DataLoader
                 {
                     case "agency.txt":
                         var agencyValues = CsvParseFile<Agency>(ctaDataFile, new AgencyClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Agency>(agencyValues);
+                        agencyValues = null;
                         break;
 
                     case "calendar.txt":
                         var calendarValues = CsvParseFile<Calendar>(ctaDataFile, new CalendarClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Calendar>(calendarValues);
+                        calendarValues = null;
                         break;
 
                     case "calendar_dates.txt":
-                        var calendarDatesValues = CsvParseFile<CalendarDates>(ctaDataFile, new CalendarDatesClassMap());
+                        var calendarDatesValues = CsvParseFile<CalendarDate>(ctaDataFile, new CalendarDatesClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, CalendarDate>(calendarDatesValues);
+                        calendarDatesValues = null;
                         break;
 
                     case "frequencies.txt":
-                        var frequenciesValues = CsvParseFile<Frequencies>(ctaDataFile, new FrequenciesClassMap());
+                        var frequenciesValues = CsvParseFile<Frequency>(ctaDataFile, new FrequenciesClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Frequency>(frequenciesValues);
+                        frequenciesValues = null;
                         break;
 
                     case "routes.txt":
-                        var routesValues = CsvParseFile<Routes>(ctaDataFile, new RoutesClassMap());
+                        var routesValues = CsvParseFile<Route>(ctaDataFile, new RoutesClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Route>(routesValues);
+                        routesValues = null;
                         break;
 
                     case "shapes.txt":
-                        var shapesValues = CsvParseFile<Shapes>(ctaDataFile, new ShapesClassMap());
+                        var shapesValues = CsvParseFile<Shape>(ctaDataFile, new ShapesClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Shape>(shapesValues);
+                        shapesValues = null;
                         break;
 
                     case "stop_times.txt":
-                        var stopTimesValues = CsvParseFile<StopTimes>(ctaDataFile, new StopTimesClassMap());
+                        var stopTimesValues = CsvParseFile<StopTime>(ctaDataFile, new StopTimesClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, StopTime>(stopTimesValues);
+                        stopTimesValues = null;
                         break;
 
                     case "stops.txt":
-                        var stopsValues = CsvParseFile<Stops>(ctaDataFile, new StopsClassMap());
+                        var stopsValues = CsvParseFile<Stop>(ctaDataFile, new StopsClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Stop>(stopsValues);
+                        stopsValues = null;
                         break;
 
                     case "transfers.txt":
-                        var transfersvalues = CsvParseFile<Transfers>(ctaDataFile, new TransfersClassMap());
+                        var transfersvalues = CsvParseFile<Transfer>(ctaDataFile, new TransfersClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Transfer>(transfersvalues);
+                        transfersvalues = null;
                         break;
 
                     case "trips.txt":
-                        var tripsvalues = CsvParseFile<Trips>(ctaDataFile, new TripsClassMap());
+                        var tripsvalues = CsvParseFile<Trip>(ctaDataFile, new TripsClassMap());
+                        DbUtilities.BulkInsert<CTADataDbContext, Trip>(tripsvalues);
+                        tripsvalues = null;
                         break;
 
                     default:
                         continue;
+
                 }
             }
         }

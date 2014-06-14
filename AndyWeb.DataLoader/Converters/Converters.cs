@@ -1,5 +1,6 @@
 ﻿using CsvHelper.TypeConversion;
 using System;
+using System.Data.SqlTypes;
 using System.Globalization;
 
 namespace AndyWeb.DataLoader
@@ -60,7 +61,11 @@ namespace AndyWeb.DataLoader
                 dayModifier++;
             }
 
-            return DateTime.ParseExact(text, "HH:mm:ss", CultureInfo.InvariantCulture).AddDays(dayModifier);
+            var timeOfDay = DateTime.ParseExact(text, "HH:mm:ss", CultureInfo.InvariantCulture).TimeOfDay;
+
+            var outputTime = SqlDateTime.MinValue.Value.Add(timeOfDay).AddDays(dayModifier);
+
+            return outputTime;
         }
     }
 

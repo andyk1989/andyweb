@@ -1,13 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AndyWeb.DataLoader
+namespace AndyWeb.Library
 {
-    public class Frequencies
+    [Table("Frequencies")]
+    public class Frequency
     {
         private static int _id = 0;
 
-        public Frequencies()
+        public Frequency()
         {
             Id = _id++;
         }

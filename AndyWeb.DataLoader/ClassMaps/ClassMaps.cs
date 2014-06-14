@@ -1,4 +1,5 @@
-﻿using CsvHelper.Configuration;
+﻿using AndyWeb.Library;
+using CsvHelper.Configuration;
 
 namespace AndyWeb.DataLoader
 {
@@ -32,7 +33,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class CalendarDatesClassMap : CsvClassMap<CalendarDates>
+    public class CalendarDatesClassMap : CsvClassMap<CalendarDate>
     {
         public CalendarDatesClassMap()
         {
@@ -42,7 +43,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class FrequenciesClassMap : CsvClassMap<Frequencies>
+    public class FrequenciesClassMap : CsvClassMap<Frequency>
     {
         public FrequenciesClassMap()
         {
@@ -53,7 +54,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class RoutesClassMap : CsvClassMap<Routes>
+    public class RoutesClassMap : CsvClassMap<Route>
     {
         public RoutesClassMap()
         {
@@ -67,7 +68,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class ShapesClassMap : CsvClassMap<Shapes>
+    public class ShapesClassMap : CsvClassMap<Shape>
     {
         public ShapesClassMap()
         {
@@ -79,7 +80,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopsClassMap : CsvClassMap<Stops>
+    public class StopsClassMap : CsvClassMap<Stop>
     {
         public StopsClassMap()
         {
@@ -95,13 +96,13 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class StopTimesClassMap : CsvClassMap<StopTimes>
+    public class StopTimesClassMap : CsvClassMap<StopTime>
     {
         public StopTimesClassMap()
         {
             Map(m => m.TripId).Name("trip_id");
-            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeSpanConverter>();
-            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeSpanConverter>();
+            Map(m => m.ArrivalTime).Name("arrival_time").TypeConverter<TimeConverter>();
+            Map(m => m.DepartureTime).Name("departure_time").TypeConverter<TimeConverter>();
             Map(m => m.StopId).Name("stop_id");
             Map(m => m.StopSequence).Name("stop_sequence");
             Map(m => m.StopHeadSign).Name("stop_headsign");
@@ -110,7 +111,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class TransfersClassMap : CsvClassMap<Transfers>
+    public class TransfersClassMap : CsvClassMap<Transfer>
     {
         public TransfersClassMap()
         {
@@ -120,7 +121,7 @@ namespace AndyWeb.DataLoader
         }
     }
 
-    public class TripsClassMap : CsvClassMap<Trips>
+    public class TripsClassMap : CsvClassMap<Trip>
     {
         public TripsClassMap()
         {

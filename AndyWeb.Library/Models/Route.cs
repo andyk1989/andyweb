@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AndyWeb.DataLoader
+namespace AndyWeb.Library
 {
-    public class Routes
+    [Table("Routes")]
+    public class Route
     {
         private static int _id = 0;
 
-        public Routes()
+        public Route()
         {
             Id = _id++;
         }
