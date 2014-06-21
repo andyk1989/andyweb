@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb.DataLoader", "AndyW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb.Library", "AndyWeb.Library\AndyWeb.Library.csproj", "{1909CCF6-E2DF-4E0D-8299-8FB37B9FC1E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndyWeb.WebAPI", "AndyWeb.WebAPI\AndyWeb.WebAPI.csproj", "{30F6C07D-165D-4687-8300-B2F9E5F23FB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1909CCF6-E2DF-4E0D-8299-8FB37B9FC1E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1909CCF6-E2DF-4E0D-8299-8FB37B9FC1E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1909CCF6-E2DF-4E0D-8299-8FB37B9FC1E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F6C07D-165D-4687-8300-B2F9E5F23FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F6C07D-165D-4687-8300-B2F9E5F23FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F6C07D-165D-4687-8300-B2F9E5F23FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F6C07D-165D-4687-8300-B2F9E5F23FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
